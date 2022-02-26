@@ -1,0 +1,38 @@
+Pipeline Script-1:
+==============
+pipeline {
+    agent any 
+    stages {
+        stage('clone repo') { 
+            steps {
+                sh "rm -rf mvnproj"
+                sh "git clone https://github.com/sathyadevops/mvnproj.git"
+                sh "mvn clean -f mvnproj"
+            }
+        }
+        stage('Compile') { 
+            steps {
+                sh "mvn compile -f mvnproj"
+            }
+        }
+        stage('Test') { 
+            steps {
+                sh "mvn test -f mvnproj"
+            }
+        }
+        stage('package') { 
+            steps {
+                sh "mvn package -f mvnproj"
+            }
+        }
+        stage('deploy') { 
+            steps {
+                sh "cp 
+
+/var/lib/jenkins/workspace/JENKINS_PILELINE1/mvnproj/target/myproj.war 
+
+/var/lib/tomcat9/webapps/"
+            }
+        }
+    }
+}
