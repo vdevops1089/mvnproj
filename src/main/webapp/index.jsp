@@ -27,7 +27,7 @@
       </table>
 
 
-<table width="50%" bgcolor="blue" align="center" border="2">
+<table width="100%" bgcolor="Orange" align="center" border="6">
 
 <tr>
 <td colspan=2><center><font size=4><b>HTML Login Page</b></font></center></td>
